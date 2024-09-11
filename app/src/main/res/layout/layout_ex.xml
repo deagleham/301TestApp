@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World"
+        android:textColor="#FF992299"
+        android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvJona"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jona"
+        android:textSize="48sp"
+        app:layout_editor_absoluteX="271dp"
+        app:layout_editor_absoluteY="159dp"
+        tools:layout_editor_absoluteX="271dp" />
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="205dp"
+        android:layout_height="153dp"
+        android:text="OK"
+        android:textSize="48sp"
+        tools:layout_editor_absoluteX="300dp"
+        tools:layout_editor_absoluteY="517dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
