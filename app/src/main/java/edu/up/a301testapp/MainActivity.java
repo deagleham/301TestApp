@@ -1,7 +1,6 @@
 package edu.up.a301testapp;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,8 +14,7 @@ public class MainActivity extends AppCompatActivity {
      * @author CS301
      * @version 11 Sep 2024
      */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate_drawing_example(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawing_canvas);
 
@@ -29,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
      * @version 11 Sep 2024
      */
 
-    protected void onCreate_Original(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.complex);
 
@@ -37,32 +36,19 @@ public class MainActivity extends AppCompatActivity {
         Button buttCont = findViewById(R.id.buttCont);
         buttCont.setText("Hooray!");
         buttCont.setTextSize(60.0f);
-    }
 
-    public void incrementMe(View theView) {
+        //Get a reference to the 'Update Me' button
         Button buttUpdate = findViewById(R.id.buttUpdate);
-        //get a reference to the tvCountNum textview
-        TextView tvCountNum = findViewById(R.id.tvCountNum);
 
-        //extract the current value of tvCountNum as a string
-        CharSequence cseq = tvCountNum.getText();
-        String textVal = cseq.toString();
+        //Get a reference to a new UpdateMeButtonClickHandler object
+        TextView tv = findViewById(R.id.tvCountNum); //this textview that be updated
+        UpdateMeButtonClickHandler umbch = new UpdateMeButtonClickHandler(tv);
 
-        //convert the string to an integer
-        /**
-         * External Citation
-         *
-         * I had to lookup how to convert a string to an int
-         * https://stackoverflow.com/questions/5585779/how-do-i-convert-a-string-to-an-int-in-java
-         */
-        int intVal = Integer.parseInt(textVal);
+        //Step 3: Connect the UpdateMe button with the UpdateMeButtonClickHandler object
+        buttUpdate.setOnClickListener(umbch);
 
-        //increment the result
-        intVal++;
-
-        //put the new value back into the tv as a string
-        tvCountNum.setText("" + intVal);
     }
+
 
 }
 
